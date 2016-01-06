@@ -1,17 +1,20 @@
 module.exports = {
-  entry: './app/App.js',
+  entry: "./app/App.js",
   output: {
-    path: './public',
-    filename: 'bundle.js'
+    filename: "public/bundle.js"
   },
   module: {
     loaders: [
       {
         test: /\.js$/,
-        include: /app/,
         exclude: /node_modules/,
-        loader: 'babel?presets[]=react'
+        loader: 'babel'
+      },
+      {
+        test: /\.css$/,
+        exclude: /node_modules/,
+        loader: 'css'
       }
     ]
   }
-};
+}
